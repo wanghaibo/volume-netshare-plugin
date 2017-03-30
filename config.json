@@ -18,6 +18,11 @@
             "Settable": [
                 "value"
             ]
+        },
+        {
+            "Name":"NETSHARE_INTERFACE_SOCKET",
+            "Description": "socket filename for Interface socket",
+            "Value": "netshare"
         }
     ],
     "Linux": {
