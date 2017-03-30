@@ -27,10 +27,10 @@ volumes:
 
 ## build docker-volume-netshare
 ```
-go  get github.com/wanghaibo/docker-volume-netshare
-mkdir -p $GOPATH/github.com/ContainX/
-mv $GOPATH/src/github.com/wanghaibo/docker-volume-netshare $GOPATH/github.com/ContainX/
-cd $GOPATH/github.com/ContainX/docker-volume-netshare
+git clone https://github.com/wanghaibo/docker-volume-netshare.git
+mkdir -p $GOPATH/src/github.com/ContainX/
+mv docker-volume-netshare $GOPATH/src/github.com/ContainX/
+cd $GOPATH/src/github.com/ContainX/docker-volume-netshare
 GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build
 ```
 
