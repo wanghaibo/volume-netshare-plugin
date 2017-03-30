@@ -1,7 +1,6 @@
-# docker-volume-cifs
-cifs plugin for docker1.13
+netshare volume plugin for docker1.13 base https://github.com/ContainX/docker-volume-netshare
 
-##usage
+## usage
 ```
 docker plugin install wanghaibo/docker-volume-netshare SHARE_CMD=cifs
 docker plugin enable wanghaibo/docker-volume-netshare
@@ -9,7 +8,7 @@ docker volume create -d wanghaibo/docker-volume-netshare --name wanghaibo -o sha
 docker run -ti -v wanghaibo:/mount centos ls /mount
 ```
 
-##compse v3
+## compse v3
 ```
 version: '3'
 services:
@@ -26,7 +25,7 @@ volumes:
       password: ***
 ```
 
-##build docker-volume-netshare
+## build docker-volume-netshare
 ```
 go  get github.com/wanghaibo/docker-volume-netshare
 mkdir -p $GOPATH/github.com/ContainX/
@@ -35,7 +34,7 @@ cd $GOPATH/github.com/ContainX/docker-volume-netshare
 GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build
 ```
 
-##create plugin
+## create plugin
 ```
 sh mkPlugin.sh wanghaibo/docker-volume-netshare
 docker plugin push wanghaibo/docker-volume-netshare
