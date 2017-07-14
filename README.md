@@ -13,13 +13,13 @@ docker run -ti -v wanghaibo:/mount centos ls /mount
 version: '3'
 services:
   web:
-    images: nginx
+    image: nginx
     volumes:
       - test:/data
 volumes:
   test:
-    dirver: wanghaibo/docker-volume-netshare
-    dirver_opts:
+    driver: wanghaibo/docker-volume-netshare
+    driver_opts:
       share: 10.0.6.59/remotedir
       username: ***
       password: ***
