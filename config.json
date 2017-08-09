@@ -1,0 +1,36 @@
+{
+    "Description": "A cifs plugin for Docker",
+    "Entrypoint" : [
+        "sh", "/docker-entrypoint.sh"
+    ],
+    "Interface": {
+        "Socket": "netshare.sock",
+        "Types": [
+            "docker.volumedriver/1.0"
+        ]
+    },
+    "PropagatedMount": "/var/lib/docker-volumes/netshare",
+    "Env": [
+        {
+            "Name":"SHARE_CMD",
+            "Description": "one of ceph nfs cifs efs",
+            "Value": "cifs",
+            "Settable": [
+                "value"
+            ]
+        },
+        {
+            "Name":"NETSHARE_SOCKET_NAME",
+            "Description": "socket filename for Interface socket",
+            "Value": "netshare"
+        }
+    ],
+    "Linux": {
+        "Capabilities": ["CAP_SYS_ADMIN"],
+        "AllowAllDevices": true,
+        "Devices": null
+    },
+    "network": {
+        "type": "host"
+    }
+}
