@@ -9,6 +9,7 @@ else
     PLUGIN_NAME=$1
 fi
 
+chmod +x ./docker-volume-netshare
 TMPDIR=/tmp/docker-volume-netshare
 rm -rf $TMPDIR
 docker build -t netshare .
