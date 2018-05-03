@@ -23,6 +23,8 @@ volumes:
       share: 10.0.6.59/remotedir
       username: ***
       password: ***
+      dirMode: "0777"
+      fileMode: "0777"
 ```
 
 ## build docker-volume-netshare
